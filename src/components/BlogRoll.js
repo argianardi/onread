@@ -26,11 +26,11 @@ const BlogRollTemplate = (props) => {
                         image: post.frontmatter.featuredimage,
                         alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         width:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.width,
+                          post.frontmatter.featuredimage?.childImageSharp?
+                            .gatsbyImageData?.width,
                         height:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.height,
+                          post.frontmatter.featuredimage?.childImageSharp?
+                            .gatsbyImageData?.height,
                       }}
                     />
                   </div>
