@@ -1,11 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const BlogRollTemplate = (props) => {
-  
   const { edges: posts } = props.data.allMarkdownRemark;
 
   return (
@@ -26,15 +24,15 @@ const BlogRollTemplate = (props) => {
                         image: post.frontmatter.featuredimage,
                         alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         width:
-                          post.frontmatter.featuredimage?.childImageSharp?
-                            .gatsbyImageData?.width,
+                          post.frontmatter.featuredimage?.childImageSharp
+                            ?.gatsbyImageData?.width,
                         height:
-                          post.frontmatter.featuredimage?.childImageSharp?
-                            .gatsbyImageData?.height,
+                          post.frontmatter.featuredimage?.childImageSharp
+                            ?.gatsbyImageData?.height,
                       }}
                     />
                   </div>
-                ) }
+                )}
                 <p className="post-meta">
                   <Link
                     className="title has-text-primary is-size-4"
@@ -60,8 +58,8 @@ const BlogRollTemplate = (props) => {
           </div>
         ))}
     </div>
-  )
-}
+  );
+};
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({
@@ -69,8 +67,7 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
-
+};
 
 export default function BlogRoll() {
   return (
@@ -100,7 +97,6 @@ export default function BlogRoll() {
                         quality: 100
                         layout: CONSTRAINED
                       )
-
                     }
                   }
                 }
